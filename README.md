@@ -1,4 +1,4 @@
-# Docker Environment for Environmental Data Science
+# Docker Image for Environmental Data Science
 
 Author: Dr. Zhonghua Zheng (zhonghua.zheng@outlook.com)
 
