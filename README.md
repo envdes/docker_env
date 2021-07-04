@@ -6,10 +6,19 @@ Author: Dr. Zhonghua Zheng (zhonghua.zheng@outlook.com)
 
 This Docker image is used for Environmental Data Science. It consists of:
 
-- numpy, pandas, scipy, xarray (with netCDF4 support)
 - jupyter
-- scikit-learn, pytorch
-- matplotlib
+- data processing
+  - numpy
+  - pandas
+  - xarray (with netCDF4 support)
+  - scipy
+- machine learning
+  - scikit-learn
+  - PyTorch
+  - LightGBM
+- mapping & plotting:
+  - Cartopy
+  - matplotlib
 
 ## Usage
 
@@ -19,14 +28,14 @@ This Docker image is used for Environmental Data Science. It consists of:
 
   ```bash
   $ cd your_scripts_folder
-  $ docker run -it --rm -p 8888:8888 -v $PWD:/home zzheng93/ml
+  $ docker run -it --rm -p 8888:8888 -v $PWD:/home envdes/env
   ```
 
 - If you have your scripts (notebooks) and data in different folders (then you would have a folder "/data" after you running the container):
 
   ```bash
   $ cd your_scripts_folder
-  $ docker run -it --rm -p 8888:8888 -v $PWD:/home -v /path_to_data_folder:/data zzheng93/ml
+  $ docker run -it --rm -p 8888:8888 -v $PWD:/home -v /path_to_data_folder:/data envdes/env
   ```
 
 **Step 2: open your browser, type "localhost:8888", copy the token from terminal (after "token=") and paste** 

@@ -11,6 +11,11 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
         gcc \
         libnetcdf-dev \
         libgomp1 \
+        libproj-dev \ 
+        libgeos-dev \
+        proj-data \ 
+        proj-bin \ 
+        g++ \
     && wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-aarch64.sh -O ~/miniforge3.sh \
     && bash ~/miniforge3.sh -b -p $CONDA_DIR \
     && echo ". ${CONDA_DIR}/etc/profile.d/conda.sh && conda activate base" >> /etc/skel/.bashrc \
@@ -25,8 +30,10 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
         xarray \
         jupyter \
         matplotlib \
+        lightgbm \
     && pip --no-cache-dir install \ 
         netCDF4 \
+        cartopy \
         torch \
         torchvision \
     && conda clean --all 
@@ -48,7 +55,7 @@ CMD ["jupyter", "notebook", "--port=8888", "--no-browser",  "--ip=0.0.0.0", "--n
 
 #==============
 # useful commands
-# docker build -t zzheng93/ml .
-# docker run -it --rm -p 8888:8888 -v $PWD:/home zzheng93/ml
-# docker run -it --rm -p 8888:8888 -v $PWD:/home -v /path_to_data_folder:/data zzheng93/ml
-# docker push zzheng93/ml
+# docker build -t envdes/env .
+# docker run -it --rm -p 8888:8888 -v $PWD:/home envdes/env
+# docker run -it --rm -p 8888:8888 -v $PWD:/home -v /path_to_data_folder:/data envdes/env
+# docker push envdes/env
