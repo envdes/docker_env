@@ -36,7 +36,8 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
         cartopy \
         torch \
         torchvision \
-    && conda clean --all 
+        xgboost \
+    && conda clean --all
 
 CMD ["jupyter", "notebook", "--port=8888", "--no-browser",  "--ip=0.0.0.0", "--notebook-dir=/home", "--allow-root"]
 

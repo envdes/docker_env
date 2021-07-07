@@ -16,6 +16,7 @@ This Docker image is used for Environmental Data Science. It consists of:
   - scikit-learn
   - PyTorch
   - LightGBM
+  - XGBoost
 - mapping & plotting:
   - Cartopy
   - matplotlib
@@ -39,4 +40,20 @@ This Docker image is used for Environmental Data Science. It consists of:
   ```
 
 **Step 2: open your browser, type "localhost:8888", copy the token from terminal (after "token=") and paste** 
+
+- If you got the error such as 
+
+  ```
+  libgomp-d22c30c5.so.1.0.0: cannot allocate memory in static TLS block'
+  ```
+
+  Please import the following package(s) first
+
+  ```Python
+  import sklearn
+  import torch
+  import xgboost
+  ```
+
+  
 
