@@ -27,7 +27,7 @@ This Docker image is used for Environmental Data Science. It consists of:
 
 - [Download from here](https://www.docker.com/products/docker-desktop).
 
-**Step 1: run a docker container**
+**Step 1: run a docker container (using Terminal)**
 
 - If you have your scripts (notebooks) and data in the same folder:
 
